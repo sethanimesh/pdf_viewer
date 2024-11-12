@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PDF Co-Viewer Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="controls">
+        <button id="prev-page">Previous</button>
+        <span>Page: <span id="page-num"></span> / <span id="page-count"></span></span>
+        <button id="next-page">Next</button>
+    </div>
+    <div class="pdf-container">
+        <canvas id="pdf-render"></canvas>
+    </div>
+    <script src="{{ url_for('static', filename='pdfjs/pdf.js') }}"></script>
+    <script src="{{ url_for('static', filename='pdfjs/pdf.worker.js') }}"></script>
+    <script src="https://cdn.socket.io/4.3.2/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

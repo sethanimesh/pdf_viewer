@@ -1,8 +1,8 @@
-from flask import Flask, render_template
-from flask_socketio import SocketIO, emit
 import eventlet
-
 eventlet.monkey_patch()
+from flask import Flask, render_template, request
+from flask_socketio import SocketIO, emit
+
 
 app = Flask(__name__)
 socketio = SocketIO(app)
@@ -15,7 +15,6 @@ def index():
 def admin():
     return render_template('admin.html')
 
-# SocketIO events
 @socketio.on('connect')
 def handle_connect():
     print('Client connected:', request.sid)
@@ -26,7 +25,6 @@ def handle_disconnect():
 
 @socketio.on('page-change')
 def handle_page_change(data):
-    # Broadcast the page change to all clients except the sender
     emit('page-update', data, broadcast=True, include_self=False)
 
 if __name__ == '__main__':

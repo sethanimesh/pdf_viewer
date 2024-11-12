@@ -1,0 +1,7 @@
+Collecting eventlet
+  Using cached eventlet-0.37.0-py3-none-any.whl.metadata (5.5 kB)
+Requirement already satisfied: dnspython>=1.15.0 in ./pdf_env/lib/python3.13/site-packages (from eventlet) (2.7.0)
+Requirement already satisfied: greenlet>=1.0 in ./pdf_env/lib/python3.13/site-packages (from eventlet) (3.1.1)
+Using cached eventlet-0.37.0-py3-none-any.whl (361 kB)
+Installing collected packages: eventlet
+Successfully installed eventlet-0.37.0
